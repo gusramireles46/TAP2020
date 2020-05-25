@@ -2,7 +2,6 @@
     -fx-background-image: url("../Images/imgTecno2.png");
     -fx-background-size: cover, auto;
     -fx-text-fill: white;
-    -fx-font-weight: bold;
 }
 
 .label{
@@ -11,8 +10,15 @@
 
 #lblTitle{
     -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+
+#lblInfo{
+    -fx-font-size: 14px;
+    -fx-font-weight: 700;
+    -fx-font-style: italic;
 }
 
 #lblFooter{
-    -fx-font-size: 9px;
+    -fx-font-size: 11px;
 }

@@ -11,6 +11,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sample.Vistas.About;
+import sample.Vistas.Buscaminas;
+import sample.Vistas.Taquimecanografo;
 
 public class Main extends Application {
     private VBox _vbox;
@@ -56,6 +58,8 @@ public class Main extends Application {
         _mnbPrincipal.getMenus().addAll(_mnCompetencia1, _mnCompetencia2, _mnCompetencia3, _mnProyecto, _mnMore);
 
         //Eventos de los MenuItem
+        _mitPractica1.setOnAction(event -> OpcionMenu(1));
+        _mitPractica2.setOnAction(event -> OpcionMenu(2));
         _mitAbout.setOnAction(event -> OpcionMenu(7));
         _mitSalida.setOnAction(event -> OpcionMenu(0));
 
@@ -77,6 +81,12 @@ public class Main extends Application {
         switch (i){
             case 0:
                    System.exit(0);
+                break;
+            case 1:
+                //new Buscaminas();
+                break;
+            case 2:
+                new Taquimecanografo();
                 break;
             case 7:
                 new About();

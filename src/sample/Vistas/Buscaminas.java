@@ -1,5 +1,7 @@
 package sample.Vistas;
 
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
@@ -17,14 +19,33 @@ public class Buscaminas extends Stage {
     private ToggleButton[][] _btnCampo;
     private VBox _vbox;
     private HBox _hbox;
+    private String[][] contador;
+    private int nr = 0;
+    private int nc = 0;
+    private Scene _escena;
 
     public Buscaminas(){
         CrearGUI();
-        //this.setScene();
+        this.setScene(_escena);
         this.setTitle("Buscaminas");
+        this.setMaximized(true);
         this.show();
     }
 
     private void CrearGUI() {
+        //Definición de los elementos principales
+        _lblRows = new Label("Reglones");
+        _lblColums = new Label("Columnas");
+        _txfRows = new TextField();
+        _txfColumns = new TextField();
+        _btnGenerar = new Button("Generar");
+        _vbox = new VBox();
+        _hbox = new HBox();
+        _hbox.setAlignment(Pos.CENTER);
+
+        //Construcción de la Intefaz
+        _hbox.getChildren().addAll(_lblRows, _txfRows, _lblColums, _txfColumns, _btnGenerar);
+
+        //_escena = new Scene(_gdpTablero, 720, 1280);
     }
 }

@@ -1,13 +1,16 @@
 package sample.Vistas;
 
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 public class About extends Stage {
@@ -23,13 +26,20 @@ public class About extends Stage {
 
         _vbox = new VBox();
         _btnSalir = new Button("Aceptar");
+        DropShadow dropShadow = new DropShadow();
+        dropShadow.setRadius(5.0);
+        dropShadow.setOffsetX(3.0);
+        dropShadow.setOffsetY(3.0);
+        dropShadow.setColor(Color.color(0, 0, 0));
 
         //Definición de los Label
         _lblTitle = new Label("Tópicos Avanzados de Programación");
         _lblTitle.setId("lblTitle");
+        _lblTitle.setEffect(dropShadow);
         _lblInfo = new Label("\nDesarrollado por: RAMÍREZ MIRELES GUSTAVO\nNo. Control: 18031000");
         _lblInfo.setId("lblInfo");
-        _lblFooter = new Label("\n\nTecnológico Nacional de México en Celaya");
+        _lblInfo.setEffect(dropShadow);
+        _lblFooter = new Label("\nTecnológico Nacional de México en Celaya\n");
         _lblFooter.setId("lblFooter");
 
         //Adición del logo del ITCelaya
@@ -43,12 +53,16 @@ public class About extends Stage {
         _logo.setStyle("-fx-background-color: transparent;");
 
         //Construcción de la escena
-        _vbox.getChildren().addAll(_lblTitle, _logo, _lblInfo, _lblFooter);
+        _vbox.getChildren().addAll(_lblTitle, _logo, _lblInfo, _lblFooter, _btnSalir);
         _vbox.setAlignment(Pos.CENTER);
-        _escena = new Scene(_vbox, 480, 320);
+        _vbox.setSpacing(10);
+        _escena = new Scene(_vbox, 480, 350);
         _escena.getStylesheets().add("sample/Estilos/estilos_about.css");
 
         //Acciones de los botones
+        _btnSalir.setOnAction(event -> {
+            close();
+        });
 
         this.setTitle("Acerca de TAP2020");
         this.setScene(_escena);
