@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
 import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -19,6 +20,7 @@ public class Main extends Application {
     private MenuItem _mitPractica1, _mitPractica2, _minPractica3, _mitPractica3, _mitPractica4, _mitProyecto, _mitAbout, _mitSalida;
     private BorderPane _bdpMain;
     private Scene _escena;
+    Image ico = new Image("sample/Images/icon.png");
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -68,6 +70,7 @@ public class Main extends Application {
         primaryStage.setTitle("Tópicos Avanzados de Programación");
         primaryStage.setScene(_escena);
         primaryStage.show();
+        primaryStage.getIcons().add(ico);
     }
 
     private void OpcionMenu(int i) {

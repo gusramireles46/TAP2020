@@ -16,16 +16,20 @@ public class About extends Stage {
     private HBox _hbox;
     private Label _lblTitle, _lblInfo, _lblFooter;
     private Image _imgLogo;
+    private Button _btnSalir;
+    Image ico = new Image("sample/Images/ITCelaya.png");
 
     public About(){
+
         _vbox = new VBox();
+        _btnSalir = new Button("Aceptar");
 
         //Definición de los Label
         _lblTitle = new Label("Tópicos Avanzados de Programación");
         _lblTitle.setId("lblTitle");
-        _lblInfo = new Label("Desarrolado por Gustavo Ramírez Mireles\nNo. Control: 18031000");
+        _lblInfo = new Label("\nDesarrollado por: RAMÍREZ MIRELES GUSTAVO\nNo. Control: 18031000");
         _lblInfo.setId("lblInfo");
-        _lblFooter = new Label("Tecnológico Nacional de México en Celaya");
+        _lblFooter = new Label("\n\nTecnológico Nacional de México en Celaya");
         _lblFooter.setId("lblFooter");
 
         //Adición del logo del ITCelaya
@@ -42,11 +46,14 @@ public class About extends Stage {
         _vbox.getChildren().addAll(_lblTitle, _logo, _lblInfo, _lblFooter);
         _vbox.setAlignment(Pos.CENTER);
         _escena = new Scene(_vbox, 480, 320);
-        _escena.getStylesheets().add("");
+        _escena.getStylesheets().add("sample/Estilos/estilos_about.css");
+
+        //Acciones de los botones
 
         this.setTitle("Acerca de TAP2020");
         this.setScene(_escena);
         this.centerOnScreen();
         this.show();
+        this.getIcons().add(ico);
     }
 }

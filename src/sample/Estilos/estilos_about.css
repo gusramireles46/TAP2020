@@ -1,0 +1,18 @@
+.root{
+    -fx-background-image: url("../Images/imgTecno2.png");
+    -fx-background-size: cover, auto;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.label{
+    -fx-text-fill: white;
+}
+
+#lblTitle{
+    -fx-font-size: 24px;
+}
+
+#lblFooter{
+    -fx-font-size: 9px;
+}
