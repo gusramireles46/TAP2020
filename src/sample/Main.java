@@ -1,8 +1,6 @@
 package sample;
 
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -57,9 +55,15 @@ public class Main extends Application {
 
         //Eventos de los MenuItem
         _mitAbout.setOnAction(event -> OpcionMenu(7));
+        _mitSalida.setOnAction(event -> OpcionMenu(0));
 
         //Se crea la escena principal que se va a mostrar
         _escena = new Scene(_bdpMain, 720, 480);
+
+        //Adición de estilos al programa
+        _escena.getStylesheets().add("sample/Estilos/estilo_main.css");
+
+        //Visualización del programa
         primaryStage.setMaximized(true);
         primaryStage.setTitle("Tópicos Avanzados de Programación");
         primaryStage.setScene(_escena);
@@ -68,6 +72,9 @@ public class Main extends Application {
 
     private void OpcionMenu(int i) {
         switch (i){
+            case 0:
+                   System.exit(0);
+                break;
             case 7:
                 new About();
             break;

@@ -1,0 +1,4 @@
+.root{
+    -fx-background-image: url("../Images/TecNMCelaya.jpg");
+    -fx-background-size: cover, auto;
+}
