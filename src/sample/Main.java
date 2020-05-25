@@ -16,8 +16,8 @@ public class Main extends Application {
     private VBox _vbox;
     private HBox _hbox;
     private MenuBar _mnbPrincipal;
-    private Menu _mnCompetencia1, _mnCompetencia2, _mnCompetencia3, _mnProyecto, _mnSalida;
-    private MenuItem _mitPractica1, _mitPractica2, _minPractica3, _mitPractica3, _mitPractica4, _mitProyecto, _mitSalida;
+    private Menu _mnCompetencia1, _mnCompetencia2, _mnCompetencia3, _mnProyecto, _mnMore;
+    private MenuItem _mitPractica1, _mitPractica2, _minPractica3, _mitPractica3, _mitPractica4, _mitProyecto, _mitAbout, _mitSalida;
     private BorderPane _bdpMain;
     private Scene _escena;
 
@@ -33,6 +33,7 @@ public class Main extends Application {
         _mnCompetencia2 = new Menu("Competencia 2");
         _mnCompetencia3 = new Menu("Competencia 3");
         _mnProyecto = new Menu("Proyecto");
+        _mnMore = new Menu("Más ▼");
 
         //Se crean los MenuItem()
         _mitPractica1 = new MenuItem("Buscaminas");
@@ -40,12 +41,18 @@ public class Main extends Application {
         _mitPractica3 = new MenuItem("CRUD Productos");
         _mitPractica4 = new MenuItem("Pista de Atletismo");
         _mitProyecto = new MenuItem("Sistema de una Taquería");
+        _mitAbout = new MenuItem("Acerca de TAP2020");
+        _mitSalida = new MenuItem("Salir");
 
         //Se agregan los MenuItem a un Menu
         _mnCompetencia1.getItems().addAll(_mitPractica1, _mitPractica2);
+        _mnCompetencia2.getItems().addAll(_mitPractica3);
+        _mnCompetencia3.getItems().addAll(_mitPractica4);
+        _mnProyecto.getItems().addAll(_mitProyecto);
+        _mnMore.getItems().addAll(_mitAbout, _mitSalida);
 
         //Se agregan todos los menus al MenuBar()
-        _mnbPrincipal.getMenus().addAll(_mnCompetencia1);
+        _mnbPrincipal.getMenus().addAll(_mnCompetencia1, _mnCompetencia2, _mnCompetencia3, _mnProyecto, _mnMore);
 
         //Se crea la escena principal que se va a mostrar
         _escena = new Scene(_bdpMain, 720, 480);
