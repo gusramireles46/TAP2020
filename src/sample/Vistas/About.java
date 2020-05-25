@@ -41,6 +41,7 @@ public class About extends Stage {
         _lblInfo.setEffect(dropShadow);
         _lblFooter = new Label("\nTecnológico Nacional de México en Celaya\n");
         _lblFooter.setId("lblFooter");
+        _lblFooter.setEffect(dropShadow);
 
         //Adición del logo del ITCelaya
         Button _logo = new Button();
