@@ -11,6 +11,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import sample.Vistas.About;
 
 public class Main extends Application {
     private VBox _vbox;
@@ -28,14 +29,14 @@ public class Main extends Application {
         _mnbPrincipal = new MenuBar();
         _bdpMain.setTop(_mnbPrincipal);
 
-        //Se inicializan todos los Menu()
+        //Se inicializan todos los Menu
         _mnCompetencia1 = new Menu("Competencia 1");
         _mnCompetencia2 = new Menu("Competencia 2");
         _mnCompetencia3 = new Menu("Competencia 3");
         _mnProyecto = new Menu("Proyecto");
         _mnMore = new Menu("Más ▼");
 
-        //Se crean los MenuItem()
+        //Se crean los MenuItem
         _mitPractica1 = new MenuItem("Buscaminas");
         _mitPractica2 = new MenuItem("Taquimecanógrafo");
         _mitPractica3 = new MenuItem("CRUD Productos");
@@ -51,8 +52,11 @@ public class Main extends Application {
         _mnProyecto.getItems().addAll(_mitProyecto);
         _mnMore.getItems().addAll(_mitAbout, _mitSalida);
 
-        //Se agregan todos los menus al MenuBar()
+        //Se agregan todos los menus al MenuBar
         _mnbPrincipal.getMenus().addAll(_mnCompetencia1, _mnCompetencia2, _mnCompetencia3, _mnProyecto, _mnMore);
+
+        //Eventos de los MenuItem
+        _mitAbout.setOnAction(event -> OpcionMenu(7));
 
         //Se crea la escena principal que se va a mostrar
         _escena = new Scene(_bdpMain, 720, 480);
@@ -60,6 +64,14 @@ public class Main extends Application {
         primaryStage.setTitle("Tópicos Avanzados de Programación");
         primaryStage.setScene(_escena);
         primaryStage.show();
+    }
+
+    private void OpcionMenu(int i) {
+        switch (i){
+            case 7:
+                new About();
+            break;
+        }
     }
 
 
