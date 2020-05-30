@@ -50,5 +50,19 @@ public class Taquimecanografo extends Stage {
         _hTeclas4 = new HBox();
         _hTeclas5 = new HBox();
         _hTeclas6 = new HBox();
+
+        //Creación botones teclas 1.
+        _btnTeclas1 = new Button[_sTeclas1.length];
+        for (int i = 0; i < _sTeclas1.length; i++) {
+            _btnTeclas1[i] = new Button(_sTeclas1[i]);
+            _hTeclas1.getChildren().addAll(_btnTeclas1[i]);
+            _btnTeclas1[i].setPrefWidth(100);
+            _btnTeclas1[i].setId("button1");
+        }
+
+        _vKeyboard.getChildren().addAll(_hTeclas1);
+        _vMain.getChildren().addAll(_tlbMenu, _txaTexto, _txaEscritura, _vKeyboard);
+
+        _escena = new Scene(_vMain);
     }
 }
