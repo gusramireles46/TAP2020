@@ -60,10 +60,7 @@ public class Taquimecanografo extends Stage {
         _hTeclas4 = new HBox();
         _hTeclas5 = new HBox();
         _hTeclas6 = new HBox();
-<<<<<<< HEAD
         _tlbMenu = new ToolBar();
-=======
->>>>>>> ea1c9545c44b52323104931c047ee5decc11f01b
 
         //Creación botones teclas 1.
         _btnTeclas1 = new Button[_sTeclas1.length];
@@ -74,7 +71,6 @@ public class Taquimecanografo extends Stage {
             _btnTeclas1[i].setId("button1");
         }
 
-<<<<<<< HEAD
         //Creación de botones teclas 2
         _btnTeclas2 = new Button[_sTeclas2.length];
         for (int i = 0; i < _sTeclas2.length; i++) {
@@ -159,11 +155,5 @@ public class Taquimecanografo extends Stage {
         _flcArchivo = new FileChooser();
         _flcArchivo.setTitle("Abrir archivo");
         _flArchivo = _flcArchivo.showOpenDialog(this);
-=======
-        _vKeyboard.getChildren().addAll(_hTeclas1);
-        _vMain.getChildren().addAll(_tlbMenu, _txaTexto, _txaEscritura, _vKeyboard);
-
-        _escena = new Scene(_vMain);
->>>>>>> ea1c9545c44b52323104931c047ee5decc11f01b
     }
 }
