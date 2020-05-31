@@ -1,9 +1,6 @@
 package sample.Vistas;
 
 import javafx.geometry.Insets;
-import javafx.geometry.Orientation;
-import javafx.geometry.Pos;
-import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
@@ -13,6 +10,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import sample.Eventos.EventoTaquimecanografo;
 
 import java.io.File;
 
@@ -136,6 +134,10 @@ public class Taquimecanografo extends Stage {
         _hTeclas4.setPadding(new Insets(5));
         _hTeclas5.setPadding(new Insets(5));
         _hTeclas6.setPadding(new Insets(5));
+
+        EventoTaquimecanografo _objEvent = new EventoTaquimecanografo(_btnTeclas1, _btnTeclas2, _btnTeclas3, _btnTeclas4, _btnTeclas5, _btnTeclas6);
+        _txaEscritura.setOnKeyPressed(_objEvent);
+        _txaEscritura.setOnKeyReleased(_objEvent);
 
         //Añadiendo elementos al ToolBar
         _tlbMenu.getItems().addAll(_btnAbrir, _btnSalir);
