@@ -5,8 +5,6 @@ import javafx.scene.control.Button;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 
-import java.security.Key;
-
 public class EventoTaquimecanografo implements EventHandler<KeyEvent> {
 
     Button[] arBotones1;
