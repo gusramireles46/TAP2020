@@ -1,15 +1,20 @@
 package sample.Vistas;
 
+import javafx.event.Event;
+import javafx.event.EventHandler;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import sample.Eventos.EventoBuscaminas;
 
 public class Buscaminas extends Stage {
     private GridPane _gdpTablero;
@@ -43,9 +48,13 @@ public class Buscaminas extends Stage {
         _hbox = new HBox();
         _hbox.setAlignment(Pos.CENTER);
 
+        //Evento Generar
+        _btnGenerar.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventoBuscaminas(_txfRows, _txfColumns, _btnCampo, _gdpTablero, _vbox));
         //Construcción de la Intefaz
         _hbox.getChildren().addAll(_lblRows, _txfRows, _lblColums, _txfColumns, _btnGenerar);
+        _vbox.getChildren().addAll(_hbox);
 
-        //_escena = new Scene(_gdpTablero, 720, 1280);
+        _escena = new Scene(_vbox, 1280, 720);
+
     }
 }

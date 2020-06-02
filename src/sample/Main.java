@@ -83,7 +83,7 @@ public class Main extends Application {
                    System.exit(0);
                 break;
             case 1:
-                //new Buscaminas();
+                new Buscaminas();
                 break;
             case 2:
                 new Taquimecanografo();
