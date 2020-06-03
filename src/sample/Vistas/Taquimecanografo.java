@@ -10,12 +10,21 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
 import sample.Eventos.EventoTaquimecanografo;
+import sample.Eventos.EventoVentana;
 
+import java.io.BufferedReader;
 import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
 
 public class Taquimecanografo extends Stage {
     private Scene _escena;
+    private FileReader _frLectura = null;
+    private BufferedReader _brLeer = null;
+    private String _texto = "";
+    private Character _char;
     private ToolBar _tlbMenu;
     private Button _btnAbrir, _btnSalir;
     private FileChooser _flcArchivo;
@@ -35,6 +44,7 @@ public class Taquimecanografo extends Stage {
         CrearGUI();
         this.setMaximized(true);
         this.setScene(_escena);
+        this.addEventHandler(WindowEvent.WINDOW_CLOSE_REQUEST, new EventoVentana());
         this.setTitle("Taquimecanógrafo");
         this.show();
     }
@@ -59,6 +69,11 @@ public class Taquimecanografo extends Stage {
         _hTeclas5 = new HBox();
         _hTeclas6 = new HBox();
         _tlbMenu = new ToolBar();
+
+        // Manejo de TextArea
+        _txaTexto.setEditable(false);
+        _txaTexto.setWrapText(true);
+
 
         //Creación botones teclas 1.
         _btnTeclas1 = new Button[_sTeclas1.length];
@@ -154,8 +169,43 @@ public class Taquimecanografo extends Stage {
     }
 
     private void AbrirExplorador() {
+        //Abrir Explorador
         _flcArchivo = new FileChooser();
         _flcArchivo.setTitle("Abrir archivo");
         _flArchivo = _flcArchivo.showOpenDialog(this);
+
+        //Carga del archivo
+        if(_flcArchivo != null){
+            try {
+                _frLectura = new FileReader(_flArchivo);
+                _brLeer = new BufferedReader(_frLectura);
+                String _linea = _brLeer.readLine();
+
+                while (_linea != null){
+                    _texto = _texto + _linea + "\n";
+                    _linea = _brLeer.readLine();
+                }
+            } catch(Exception e){
+                e.printStackTrace();
+            } finally {
+                try {
+                    _frLectura.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+            _txaTexto.appendText(_texto);
+            //DividirTexto();
+        }
+    }
+
+    private void DividirTexto(){
+        String _text = "";
+        for (int i = 0; i < _texto.length(); i++) {
+            _char = _texto.charAt(i);
+            _text = ""+_char;
+            _txaTexto.appendText(_text);
+
+        }
     }
 }

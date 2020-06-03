@@ -300,6 +300,9 @@ public class EventoTaquimecanografo implements EventHandler<KeyEvent> {
             pos3 = 5;
             arBotones3[pos3].setStyle("-fx-base: rgba(236, 237, 238, 1.0);");
             ban = !ban;
+            if (!ban){
+                arBotones3[pos3].setStyle("-fx-base: rgba(185, 185, 185, 0.5);");
+            }
         }
         if (event.getCode() == KeyCode.Y) {
             pos3 = 6;
