@@ -1,11 +1,8 @@
-package sample.Eventos;
+package sample.Events;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;
 import javafx.scene.control.Alert;
-import javafx.scene.control.ButtonType;
-
-import java.util.Optional;
 
 public class EventoVentana implements EventHandler {
     @Override

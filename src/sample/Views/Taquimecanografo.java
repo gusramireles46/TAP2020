@@ -1,4 +1,4 @@
-package sample.Vistas;
+package sample.Views;
 
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
@@ -11,8 +11,8 @@ import javafx.scene.layout.VBox;
 import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
-import sample.Eventos.EventoTaquimecanografo;
-import sample.Eventos.EventoVentana;
+import sample.Events.EventoTaquimecanografo;
+import sample.Events.EventoVentana;
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -165,7 +165,7 @@ public class Taquimecanografo extends Stage {
 
         //Creación de la escena
         _escena = new Scene(_vMain, 1280, 650);
-        _escena.getStylesheets().add("sample/Estilos/estilo_taquimecanografo.css");
+        _escena.getStylesheets().add("sample/Styles/estilo_taquimecanografo.css");
     }
 
     private void AbrirExplorador() {

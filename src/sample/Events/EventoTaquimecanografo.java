@@ -1,4 +1,4 @@
-package sample.Eventos;
+package sample.Events;
 
 import javafx.event.EventHandler;
 import javafx.scene.control.Button;

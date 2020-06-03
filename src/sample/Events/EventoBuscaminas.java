@@ -1,4 +1,4 @@
-package sample.Eventos;
+package sample.Events;
 
 import javafx.event.Event;
 import javafx.event.EventHandler;
@@ -8,8 +8,6 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleButton;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-
-import java.awt.event.MouseEvent;
 
 public class EventoBuscaminas implements EventHandler {
 

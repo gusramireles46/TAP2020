@@ -10,9 +10,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import sample.Vistas.About;
-import sample.Vistas.Buscaminas;
-import sample.Vistas.Taquimecanografo;
+import sample.Views.About;
+import sample.Views.Buscaminas;
+import sample.Views.Taquimecanografo;
 
 public class Main extends Application {
     private VBox _vbox;
@@ -67,7 +67,7 @@ public class Main extends Application {
         _escena = new Scene(_bdpMain, 720, 480);
 
         //Adición de estilos al programa
-        _escena.getStylesheets().add("sample/Estilos/estilo_main.css");
+        _escena.getStylesheets().add("sample/Styles/estilo_main.css");
 
         //Visualización del programa
         primaryStage.setMaximized(true);

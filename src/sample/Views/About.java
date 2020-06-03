@@ -1,6 +1,5 @@
-package sample.Vistas;
+package sample.Views;
 
-import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -58,7 +57,7 @@ public class About extends Stage {
         _vbox.setAlignment(Pos.CENTER);
         _vbox.setSpacing(10);
         _escena = new Scene(_vbox, 480, 350);
-        _escena.getStylesheets().add("sample/Estilos/estilos_about.css");
+        _escena.getStylesheets().add("sample/Styles/estilos_about.css");
 
         //Acciones de los botones
         _btnSalir.setOnAction(event -> {
