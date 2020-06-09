@@ -1,5 +1,7 @@
 package sample.Views;
 
+import javafx.event.EventType;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -46,7 +48,34 @@ public class Buscaminas extends Stage {
         _hbox.setAlignment(Pos.CENTER);
 
         //Evento Generar
-        _btnGenerar.addEventHandler(MouseEvent.MOUSE_CLICKED, new EventoBuscaminas(_txfRows, _txfColumns, _btnCampo, _gdpTablero, _vbox));
+        _btnGenerar.setOnAction(e -> {
+            int nr = Integer.parseInt(_txfRows.getText());
+            int nc = Integer.parseInt(_txfColumns.getText());
+
+            int minas = (int)((nr * nc) * 0.25);
+
+            if (_btnCampo != null){
+                _vbox.getChildren().remove(_gdpTablero);
+            }
+
+            _btnCampo = new ToggleButton[nr][nc];
+            _gdpTablero = new GridPane();
+            _gdpTablero.setPadding(new Insets(15));
+
+            for (int i = 0; i < nr; i++) {
+                for (int j = 0; j < nc; j++) {
+                    _btnCampo[i][j] = new ToggleButton();
+                    _btnCampo[i][j].setPrefSize(50, 50);
+                    _gdpTablero.add(_btnCampo[i][j], i, j);
+                    int ni = i, nj = j;
+                    _btnCampo[i][j].addEventHandler(
+                        MouseEvent.MOUSE_CLICKED, event -> new EventoBuscaminas()._btnCampoActionPerformed(_btnCampo[ni][nj], ni, nj)
+                    );
+                }
+            }
+            _vbox.getChildren().addAll(_gdpTablero);
+            _gdpTablero.setAlignment(Pos.CENTER);
+        });
         //Construcción de la Intefaz
         _hbox.getChildren().addAll(_lblRows, _txfRows, _lblColums, _txfColumns, _btnGenerar);
         _vbox.getChildren().addAll(_hbox);

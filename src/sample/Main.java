@@ -12,6 +12,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import sample.Views.About;
 import sample.Views.Buscaminas;
+import sample.Views.Minesweeper;
 import sample.Views.Taquimecanografo;
 
 public class Main extends Application {
@@ -83,7 +84,7 @@ public class Main extends Application {
                    System.exit(0);
                 break;
             case 1:
-                new Buscaminas();
+                new Minesweeper();
                 break;
             case 2:
                 new Taquimecanografo();
